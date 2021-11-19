@@ -20,4 +20,4 @@ jobs:
         curl -LO https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
         sudo apt install unzip
         sudo unzip -q sonar-scanner-cli-4.6.2.2472-linux.zip -d /usr/local/bin/sonar
-        /usr/local/bin/sonar/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner -Dsonar.projectKey=temp-one -Dsonar.sources=. -Dsonar.host.url=http://54.237.113.10:9000 -Dsonar.login=f601168f42fc2aab647c9d63545d2c6094a4133if
+        /usr/local/bin/sonar/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner -Dsonar.projectKey=temp-one -Dsonar.sources=. -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_TOKEN_ONE }}
