@@ -9,12 +9,19 @@ on:
 jobs:
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: [linux]
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - uses: sonarsource/sonarqube-scan-action@master
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}    
+
+    - name: build-sonar
+      run: |
+        curl -LO https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
+        sudo apt install unzip
+        sudo unzip -q sonar-scanner-cli-4.6.2.2472-linux.zip -d /usr/local/bin/sonar
+        /usr/local/bin/sonar/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner \
+           -Dsonar.projectKey=temp-one \
+           -Dsonar.sources=. \
+           -Dsonar.host.url=http://54.237.113.10:9000 \
+           -Dsonar.login=9c5d75e50e8eac89daef2bb21d89443c75f7760e
