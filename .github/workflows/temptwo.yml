@@ -1,0 +1,14 @@
+name: temptwo
+on:
+  push:
+    branches:
+      - master # or the name of your main branch
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: docker sonar
+      run: |
+        docker run --rm sonarsource/sonar-scanner-cli
