@@ -12,3 +12,7 @@ jobs:
     - name: docker sonar
       run: |
         pwd
+        ls -la
+        cd ../../..
+        pwd
+        ls -la
