@@ -16,3 +16,4 @@ jobs:
         cd ../../..
         pwd
         ls -la
+        which ls
