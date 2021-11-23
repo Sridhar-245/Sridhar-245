@@ -11,4 +11,4 @@ jobs:
     - uses: actions/checkout@v2
     - name: docker sonar
       run: |
-        docker run --rm sonarsource/sonar-scanner-cli
+        docker run --rm sonarsource/sonar-scanner-cli sonar-scanner --help
