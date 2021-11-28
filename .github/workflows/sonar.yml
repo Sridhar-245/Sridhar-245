@@ -22,4 +22,9 @@ jobs:
         echo "Unzipping"
         sudo unzip -q sonar-scanner-cli-4.6.2.2472-linux.zip -d /usr/local/bin/sonar
         echo "Running Sonar"
-        /usr/local/bin/sonar/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner -h
+        /usr/local/bin/sonar/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner \
+           -Dsonar.projectKey=tempone \
+           -Dsonar.sources=. \
+           -Dsonar.host.url=http://100.26.212.218:9000 \
+           -Dsonar.login=71fa308f2d878cc0f0b9d9e1055f0435f10b47c6 \ 
+           -Dsonar.exclusions=./vendor/golang.org/x/sys/unix/gccgo_c.c
