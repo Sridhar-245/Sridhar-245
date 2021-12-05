@@ -19,6 +19,7 @@ jobs:
 
     - name: build-sonar
       run: |
+        echo "Downloading Sonar Scanner with Env version"      
         curl -LO https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${{ env.SONAR_SCANNER_VERSION}}-linux.zip
         sudo apt install unzip
         echo "Unzipping"
