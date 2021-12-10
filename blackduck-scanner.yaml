@@ -1,0 +1,17 @@
+- name: Black Duck Scanner
+  # You may pin to the exact commit or the version.
+  # uses: philips-labs/blackduck-scanner-action@f8a604ccb9df9a6450b35ac102b30c5b00958d87
+  uses: philips-labs/blackduck-scanner-action@v1.3
+  with:
+    # Blackduck project name
+    projectName: 
+    # Blackduck project version prefix
+    versionPrefix: 
+    # Blackduck url
+    url: 
+    # Blackduck token
+    token: 
+    # sourcePath
+    sourcePath: 
+    # Extra arguments that will be passed to the detector
+    extraArgs: # optional
