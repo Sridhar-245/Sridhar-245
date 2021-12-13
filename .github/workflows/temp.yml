@@ -19,4 +19,4 @@ jobs:
 
     - name: display rootdir
       run: |
-        echo "git._basDir"
+        echo "${{ github.workspace }}"
