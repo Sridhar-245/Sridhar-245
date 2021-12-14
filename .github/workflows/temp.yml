@@ -20,3 +20,12 @@ jobs:
     - name: display rootdir
       run: |
         echo "${{ github.workspace }}"
+        
+    - name: Push images
+      run: |
+        docker images    
+      uses: docker/build-push-action@v2
+        tags: |
+            sridhar:test-two
+      run: |
+        docker images    
